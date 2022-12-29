@@ -35,7 +35,7 @@ void PrintArray(int[,] arr)
 void FindLowestSumOfRow(int[,] arr)
 {
     int sum = 0;
-    int result = 0;
+    int result = 1000;
     int row = -1;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -43,14 +43,14 @@ void FindLowestSumOfRow(int[,] arr)
         {
             sum += arr[i, j];
         }
-        if (sum > result)
+        if (sum < result)
         {
             result = sum;
             row = i;
         } 
         sum = 0;
     }
-    Console.WriteLine($"Наибольшая сумма чисел находится в строке под номером {row}");
+    Console.WriteLine($"Наименьшая сумма чисел находится в строке под номером {row + 1}");
 }
 
 int rows = EnterData("Введите количество строк: ");
